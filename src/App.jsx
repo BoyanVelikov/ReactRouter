@@ -1,15 +1,16 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import {Home} from './pages/Home';
-import {BookList} from './pages/BookList';
-import {Book} from './pages/Book';
-import {NewBook} from './pages/NewBook';
 import {NotFound} from './pages/NotFound';
 import {BookLayout} from './pages/BookLayout';
+import {BookRoutes} from './pages/BookRoutes';
 
 export default function App() {
   return (
  <>
+   {/*<Routes location='/books'>
+    <Route path='/books' element={<h1>Extra Content</h1>}/>
+  </Routes>*/}
    <nav>
      <ul>
        <li>
@@ -22,11 +23,7 @@ export default function App() {
    </nav>
   <Routes>
     <Route path='/' element={<Home />}/>
-    <Route path='/books' element={<BookLayout />}>
-      <Route index element={<BookList />}/>
-      <Route path=':id' element={<Book />}/>
-      <Route path='new' element={<NewBook />}/>
-    </Route>
+    <Route path='/books/*' element={<BookRoutes />}/>
     <Route path='*' element={<NotFound />}/>
   </Routes>
  </>

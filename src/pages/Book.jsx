@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useOutletContext,useParams } from "react-router-dom"
 
 
 export function Book() {
