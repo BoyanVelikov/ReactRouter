@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes, useLocation } from 'react-router-dom'
 import { useRoutes } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import './App.css'
@@ -9,7 +9,8 @@ import {BookRoutes} from './pages/BookRoutes';
 import './styles.css';
 
 export default function App() {
-
+  const location = useLocation();
+  console.log(location);
   // let element = useRoutes([
   //   {
   //     path:"/",
@@ -30,7 +31,7 @@ export default function App() {
    <nav>
      <ul>
        <li>
-         <NavLink to='/' >Home</NavLink>
+         <NavLink to='/' state='Hi!'>Home</NavLink>
        </li>
        <li>
          <NavLink end to='/books'>Books</NavLink>
@@ -38,6 +39,7 @@ export default function App() {
      </ul>
    </nav>
    {/*{element}*/}
+   {location.state}
    <Routes>
     <Route path='/' element={<Home />}/>
     <Route path='/books/*' element={<BookRoutes />}/>
