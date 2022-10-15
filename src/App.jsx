@@ -10,7 +10,6 @@ import './styles.css';
 
 export default function App() {
   const location = useLocation();
-  console.log(location);
   // let element = useRoutes([
   //   {
   //     path:"/",
@@ -31,7 +30,7 @@ export default function App() {
    <nav>
      <ul>
        <li>
-         <NavLink to='/' state='Hi!'>Home</NavLink>
+         <NavLink to='/'>Home</NavLink>
        </li>
        <li>
          <NavLink end to='/books'>Books</NavLink>
